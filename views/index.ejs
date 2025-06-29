@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+  </head>
+  <body class="bg-zinc-850">
+    <div class="w-full h-screen bg-zinc-800 text-white p-5">
+      <h1 class="text-3xl">Welcome to College Predictor</h1>
+      <form action="/create" method="post" class="p-5">
+        <div class="max-w-200">
+          <label for="name" class="w-48">Name :</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter Your Name"
+            class="w-80 h-10 rounded-lg bg-zinc-700 m-3 outline-blue-600 p-2"
+          />
+        </div>
+        <div class="max-w-200">
+          <label for="Email" class="w-48">Email :</label>
+          <input
+            type="text"
+            name="Email"
+            placeholder="Enter Your Email"
+            class="w-80 h-10 rounded-lg bg-zinc-700 m-3 outline-blue-600 p-2"
+          />
+        </div>
+        <div class="max-w-200">
+          <label for="phone" class="w-48">Phone :</label>
+          <input
+            type="number"
+            name="phone"
+            placeholder="Enter Your Phone Number"
+            class="w-80 h-10 rounded-lg bg-zinc-700 m-3 outline-blue-600 p-2"
+          />
+        </div>
+        <div class="max-w-200">
+          <label for="exam" class="w-48">Exam :</label>
+          <input
+            type="text"
+            name="exam"
+            placeholder="Enter Your Exam Name"
+            class="w-80 h-10 rounded-lg bg-zinc-700 m-3 outline-blue-600 p-2"
+          />
+        </div>
+        <div class="max-w-200">
+          <label for="rank" class="w-48">Rank :</label>
+          <input
+            type="number"
+            name="rank"
+            placeholder="Enter Your Rank"
+            class="w-80 h-10 rounded-lg bg-zinc-700 m-3 outline-blue-600 p-2"
+          />
+        </div>
+        <div class="max-w-200">
+          <label for="category" class="w-48">Choose Your Category :</label>
+          <select
+            name="category"
+            class="w-80 h-10 rounded-lg bg-zinc-700 m-3 outline-blue-600 p-2"
+          >
+            <option value="GEN">General</option>
+            <option value="OBC">OBC</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+          </select>
+        </div>
+        <div class="max-w-200">
+          <label for="homeState" class="w-48">Home State :</label>
+          <input
+            type="text"
+            name="homeState"
+            placeholder="Enter Your Home State"
+            class="w-80 h-10 rounded-lg bg-zinc-700 m-3 outline-blue-600 p-2"
+          />
+        </div>
+        <div class="max-w-200">
+          <label for="gender" class="w-48">Choose Your gender :</label>
+          <select
+            name="gender"
+            class="w-80 h-10 rounded-lg bg-zinc-700 m-3 outline-blue-600 p-2"
+          >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        
+
+        <input
+          type="submit"
+          value="Submit"
+          class="bg-blue-600 w-20 h-8 rounded-lg m-3"
+        />
+      </form>
+    </div>
+  </body>
+</html>
