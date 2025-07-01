@@ -20,7 +20,7 @@ const predictRoutes = require('./routes/predict.js'); // adjust path
 // tester api
 app.get('/',(req,res)=>{
     // res.render("index");
-    res.send("hiii");
+    res.send("Home Page");
 })  
 
 
@@ -37,8 +37,6 @@ app.use('/cutoffs', cutoffRoutes); // Use the cutoff routes
 app.use('/predict', predictRoutes); // Use the predict routes
 
 app.use('/students',studentRoutes); // Use the student routes
-
-
 
 
 
