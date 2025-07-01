@@ -2,7 +2,9 @@ const express=require('express');
 const app=express();
 const mongoose=require('mongoose');
 
-// importing student model
+require('dotenv').config();
+const port = process.env.PORT ;
+
 
 app.set('view engine','ejs');
 app.use(express.json());
@@ -41,6 +43,6 @@ app.use('/students',studentRoutes); // Use the student routes
 
 
 
-app.listen(3000,()=>{
-    console.log("Server is running at https://localhost:3000");
+app.listen(port,()=>{
+    console.log(`Server is running..`);
 })
