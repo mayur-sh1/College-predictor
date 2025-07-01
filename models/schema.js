@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/college_predictor', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+require('dotenv').config();
+const uri = process.env.MONGO_URI;
+
+mongoose.connect(`${uri}`)
 .then(() => console.log("Connected to MongoDB"))
 .catch(err => console.error("MongoDB connection error:", err));
 
