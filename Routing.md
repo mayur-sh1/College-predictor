@@ -1,18 +1,18 @@
-# College Predictor API – Routing Documentation
+#  College Predictor API – Routing Documentation
 
-**Base URL:** `http://localhost:PORT/api`
+**Base URL:** `http://localhost:PORT`
 
 ---
 
-## Admin Routes
+##  Admin Routes
 
-| Method | Endpoint         | Description                | Access      |
-|--------|------------------|----------------------------|-------------|
-| POST   | /admin/register   | Register a new admin       | Superadmin  |
-| POST   | /admin/login      | Login admin and get token  | Public      |
-| GET    | /admin/me         | Get logged-in admin profile| Auth        |
-| GET    | /admin/all        | Get list of all admins     | Superadmin  |
-| DELETE | /admin/:id        | Delete admin by ID         | Superadmin  |
+| Method | Endpoint                 | Description                     | Access      |
+|--------|--------------------------|---------------------------------|-------------|
+| POST   | /admin/register          | Register new admin              | Superadmin  |
+| POST   | /admin/login             | Login and get token             | Public      |
+| GET    | /admin/me                | Get logged-in admin profile     | Auth        |
+| GET    | /admin/all               | List all admins                 | Superadmin  |
+| DELETE | /admin/delete/:username | Delete admin by username        | Superadmin  |
 
 ---
 
@@ -20,74 +20,87 @@
 
 | Method | Endpoint           | Description                             | Access |
 |--------|--------------------|-----------------------------------------|--------|
-| POST   | /students/register | Register a new student                  | Public |
-| POST   | /students/login    | Student login                           | Public |
-| GET    | /students/:id      | Get student profile by ID               | Auth   |
-| PUT    | /students/:id      | Update student info                     | Auth   |
-| DELETE | /students/:id      | Soft delete student (`isActive: false`) | Admin  |
+| POST   | /student/register  | Register a new student                  | Public |
+| POST   | /student/login     | Login as a student                      | Public |
+| GET    | /student/:_id      | Get student profile by ID               | Auth   |
+| PUT    | /student/:_id      | Update student details                  | Auth   |
+| DELETE | /student/:_id      | Soft delete student (`isActive: false`) | Admin  |
 
 ---
 
 ##  Counselling Routes
 
-| Method | Endpoint             | Description                      | Access |
-|--------|----------------------|----------------------------------|--------|
-| POST   | /counselling/create         | Create a new counselling session | Admin  |
-| GET    | /counselling/read         | Get all counselling sessions     | Public |
-| GET    | /counselling/:id     | Get counselling by ID            | Public |
-| PUT    | /counselling/:id     | Update counselling details       | Admin  |
-| DELETE | /counselling/:id     | Delete counselling session       | Admin  |
+| Method | Endpoint              | Description                        | Access |
+|--------|-----------------------|------------------------------------|--------|
+| POST   | /counselling/create   | Create new counselling session     | Admin  |
+| GET    | /counselling/read     | Get all counselling sessions       | Public |
+| GET    | /counselling/:_id     | Get counselling by ID              | Public |
+| PUT    | /counselling/:_id     | Update counselling info            | Admin  |
+| DELETE | /counselling/:_id     | Delete counselling                 | Admin  |
 
 ---
 
 ##  College Routes
 
-| Method | Endpoint        | Description            | Access |
-|--------|-----------------|------------------------|--------|
-| POST   | /colleges/create       | Create a new college   | Admin  |
-| GET    | /colleges/read       | List all colleges      | Public |
-| GET    | /colleges/:id   | Get college by ID      | Public |
-| PUT    | /colleges/:id   | Update college details | Admin  |
-| DELETE | /colleges/:id   | Delete a college       | Admin  |
+| Method | Endpoint                  | Description                          | Access |
+|--------|---------------------------|--------------------------------------|--------|
+| POST   | /college/create           | Add new college                      | Admin  |
+| GET    | /college/read             | Get all colleges                     | Public |
+| GET    | /college/id/:_id          | Get college by ID                    | Public |
+| GET    | /college/name/:name       | Get college by name                  | Public |
+| PUT    | /college/:_id             | Update college info                  | Admin  |
+| DELETE | /college/:_id             | Delete college                       | Admin  |
 
 ---
 
 ##  Branch Routes
 
-| Method | Endpoint        | Description            | Access |
-|--------|-----------------|------------------------|--------|
-| POST   | /branches       | Create a new branch    | Admin  |
-| GET    | /branches       | Get all branches       | Public |
-| GET    | /branches/:id   | Get branch by ID       | Public |
-| PUT    | /branches/:id   | Update branch details  | Admin  |
-| DELETE | /branches/:id   | Delete branch          | Admin  |
+| Method | Endpoint           | Description            | Access |
+|--------|--------------------|------------------------|--------|
+| POST   | /branch/create     | Add a new branch       | Admin  |
+| GET    | /branch/read       | List all branches      | Public |
+| GET    | /branch/:_id       | Get branch by ID       | Public |
+| PUT    | /branch/:_id       | Update branch info     | Admin  |
+| DELETE | /branch/:_id       | Delete a branch        | Admin  |
 
 ---
 
 ##  Cutoff Routes
 
-| Method | Endpoint        | Description                             | Access |
-|--------|-----------------|-----------------------------------------|--------|
-| POST   | /cutoffs        | Add a new cutoff record                 | Admin  |
-| GET    | /cutoffs        | Get all cutoff records (filterable)     | Public |
-| GET    | /cutoffs/:id    | Get cutoff by ID                        | Public |
-| PUT    | /cutoffs/:id    | Update cutoff info                      | Admin  |
-| DELETE | /cutoffs/:id    | Delete a cutoff record                  | Admin  |
+| Method | Endpoint               | Description                           | Access |
+|--------|------------------------|---------------------------------------|--------|
+| POST   | /cutoff/addCutoff      | Add new cutoff                        | Admin  |
+| GET    | /cutoff/cutoffs        | Get all cutoffs (supports filters)    | Public |
+| GET    | /cutoff/cutoffs/:id    | Get cutoff by ID                      | Public |
+| PUT    | /cutoff/cutoffs/:id    | Update cutoff                         | Admin  |
+| DELETE | /cutoff/cutoffs/:id    | Delete cutoff                         | Admin  |
 
-###  Filtering Example
-
-```http
-GET /cutoffs?collegeId=abc123&year=2024&category=GEN
-```
-##  Prediction Routes
-
-| Method | Endpoint              | Description                          | Access  |
-|--------|-----------------------|--------------------------------------|---------|
-| POST   | /predict              | Generate prediction for a student    | Student |
-| GET    | /predict/:studentId   | Get prediction result for student    | Student |
-| DELETE | /predict/:id          | Delete a prediction                  | Admin   |
+>  **Filtering Example:**  
+> `/cutoff/cutoffs?collegeId=xxx&year=2024&category=GEN&round=1`
 
 ---
+
+##  Prediction Routes
+
+| Method | Endpoint             | Description                           | Access  |
+|--------|----------------------|---------------------------------------|---------|
+| POST   | /predict             | Generate prediction for student       | Student |
+| GET    | /predict/:studentId  | Get predictions for student           | Student |
+| DELETE | /predict/:_id        | Delete prediction by ID               | Admin   |
+
+>  **Prediction Logic Includes:**  
+> student rank, category, quota, seatType, closing rank, round
+
+---
+
+##  Authentication (JWT Middleware)
+
+```js
+// middleware/auth.js
+const verifyToken = (req, res, next) => {
+  // JWT token verification logic
+};
+
 
 ###  Prediction Logic Should Match:
 

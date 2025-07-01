@@ -53,7 +53,8 @@ const collegeSchema = new mongoose.Schema({
   type: { type: String, enum: ['IIT', 'NIT', 'IIIT', 'GFTI', 'Private'], required: true },
   counsellingId: { type: mongoose.Schema.Types.ObjectId, ref: 'Counselling', required: true },
   university: String,
-  isAutonomous: Boolean
+  isAutonomous: Boolean,
+  availableBranches: [{ type: String }]  // ✅ NEW FIELD
 }, { timestamps: true });
 
 // Branch Schema

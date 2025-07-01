@@ -13,7 +13,7 @@ const adminRoutes = require('./routes/admin.js'); // adjust path
 const studentRoutes= require('./routes/students.js'); // adjust path
 const counsellingRoutes = require('./routes/counselling.js'); // adjust path
 const collegeRoutes = require('./routes/colleges.js'); // adjust path
-const branchRoutes = require('./routes/branches.js'); // adjust path
+const branchRoutes = require('./routes/branch.js'); // adjust path
 const cutoffRoutes = require('./routes/cutoffs.js'); // adjust path
 const predictRoutes = require('./routes/predict.js'); // adjust path
 
@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
 
 app.use('/admin',adminRoutes); // Use the admin routes
 
-app.use('/branches', branchRoutes); // Use the branch routes
+app.use('/branch', branchRoutes); // Use the branch routes
 
 app.use('/colleges', collegeRoutes); // Use the college routes
 
