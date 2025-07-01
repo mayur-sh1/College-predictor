@@ -3,7 +3,7 @@ const app=express();
 const mongoose=require('mongoose');
 
 require('dotenv').config();
-const port = process.env.PORT ;
+const port = process.env.PORT || 3000;
 
 
 app.set('view engine','ejs');
