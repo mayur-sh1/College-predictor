@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-// importing Model
+
 const { Branch } = require('../models/schema.js');
 
-// Check API
+
 router.get('/api', function(req, res) {
     res.send("Branch API is working");
 });
 
-// Create a new branch
+
 router.post('/create', async function(req, res) {
     try {
         const { name, location, head } = req.body;
@@ -26,7 +26,7 @@ router.post('/create', async function(req, res) {
     }
 });
 
-// Get all branches
+
 router.get('/all', async function(req, res) {
     try {
         const branches = await Branch.find();
@@ -36,7 +36,7 @@ router.get('/all', async function(req, res) {
     }
 });
 
-// Get a branch by ID
+
 router.get('/:id', async function(req, res) {
     try {
         const branch = await Branch.findById(req.params.id);
@@ -48,7 +48,7 @@ router.get('/:id', async function(req, res) {
     }
 });
 
-// Update a branch
+
 router.put('/update/:id', async function(req, res) {
     try {
         const { name, location, head } = req.body;
@@ -67,7 +67,7 @@ router.put('/update/:id', async function(req, res) {
     }
 });
 
-// Delete a branch
+
 router.delete('/delete/:id', async function(req, res) {
     try {
         const deleted = await Branch.findByIdAndDelete(req.params.id);
