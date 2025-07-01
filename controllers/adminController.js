@@ -59,6 +59,7 @@ exports.getProfile = async (req, res) => {
 // GET /admin/all
 exports.getAllAdmins = async (req, res) => {
   try {
+     console.log("Fetching admins...");
     const admins = await Admin.find();
     if (admins.length === 0) return res.json({ message: "No admins found" });
 

@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/college_predictor').then(() => {
-  console.log("Connected to MongoDB");
-}).catch(err => {
-  console.error("Failed to connect to MongoDB:", err);
+mongoose.connect('mongodb://127.0.0.1:27017/college_predictor', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })
+.then(() => console.log("Connected to MongoDB"))
+.catch(err => console.error("MongoDB connection error:", err));
 
 // Admin Panel Schema
 const adminSchema = new mongoose.Schema({
