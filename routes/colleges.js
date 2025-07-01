@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-// Importing College model
+
 const { College } = require('../models/schema.js');
 
-// Check if College API is working
+
 router.get('/api', function(req, res) {
     res.send("College API is working");
 });
 
-// Create a new college
+
 router.post('/create', async function(req, res) {
     try {
         const { name, location, university, branches } = req.body;
@@ -26,7 +26,7 @@ router.post('/create', async function(req, res) {
     }
 });
 
-// Get all colleges
+
 router.get('/all', async function(req, res) {
     try {
         const colleges = await College.find();
@@ -36,7 +36,7 @@ router.get('/all', async function(req, res) {
     }
 });
 
-// Get a single college by ID
+
 router.get('/:id', async function(req, res) {
     try {
         const college = await College.findById(req.params.id);
@@ -48,7 +48,6 @@ router.get('/:id', async function(req, res) {
     }
 });
 
-// Update a college by ID
 router.put('/update/:id', async function(req, res) {
     try {
         const { name, location, university, branches } = req.body;
@@ -67,7 +66,7 @@ router.put('/update/:id', async function(req, res) {
     }
 });
 
-// Delete a college by ID
+
 router.delete('/delete/:id', async function(req, res) {
     try {
         const deleted = await College.findByIdAndDelete(req.params.id);
