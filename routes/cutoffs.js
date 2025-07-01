@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-// Import Cutoff model
+
 const { Cutoff } = require('../models/schema.js');
 
-// Test API
+
 router.get('/api', (req, res) => {
     res.send("Cutoff API is working");
 });
 
-// Create a cutoff record
+
 router.post('/create', async (req, res) => {
     try {
         const { collegeName, branch, category, rank, year } = req.body;
@@ -33,7 +33,7 @@ router.post('/create', async (req, res) => {
     }
 });
 
-// Get all cutoffs
+
 router.get('/all', async (req, res) => {
     try {
         const cutoffs = await Cutoff.find();
@@ -43,7 +43,7 @@ router.get('/all', async (req, res) => {
     }
 });
 
-// Get cutoff by college or branch (optional query)
+
 router.get('/search', async (req, res) => {
     try {
         const { collegeName, branch } = req.query;
@@ -59,7 +59,7 @@ router.get('/search', async (req, res) => {
     }
 });
 
-// Update cutoff by ID
+
 router.put('/update/:id', async (req, res) => {
     try {
         const updated = await Cutoff.findByIdAndUpdate(req.params.id, req.body, {
@@ -75,7 +75,7 @@ router.put('/update/:id', async (req, res) => {
     }
 });
 
-// Delete cutoff by ID
+
 router.delete('/delete/:id', async (req, res) => {
     try {
         const deleted = await Cutoff.findByIdAndDelete(req.params.id);
