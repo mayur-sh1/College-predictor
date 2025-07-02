@@ -11,6 +11,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'))
 
+
+
 const adminRoutes = require('./routes/admin.js'); // adjust path
 const studentRoutes= require('./routes/students.js'); // adjust path
 const counsellingRoutes = require('./routes/counselling.js'); // adjust path

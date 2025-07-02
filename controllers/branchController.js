@@ -1,5 +1,5 @@
 const { Branch } = require('../models/schema');
-
+const bcrypt=require('bcrypt');
 //  Test route
 exports.apiTest = (req, res) => {
   res.send("Branch API is working");
