@@ -21,11 +21,22 @@ const branchRoutes = require('./routes/branch.js'); // adjust path
 const cutoffRoutes = require('./routes/cutoffs.js'); // adjust path
 const predictRoutes = require('./routes/predict.js'); // adjust path
 
-// tester api
+
 app.get('/',(req,res)=>{
-    // res.render("index");
-    res.send("Home Page");
-})  
+    res.render("index");
+})
+app.get('/about',function(req,res){
+    res.render('about');
+})
+app.get('/contact',function(req,res){
+    res.render('contact');
+})
+app.get('/privacy-policy',function(req,res){
+    res.render('privacy-policy')
+})
+app.get('/terms-and-conditions',function(req,res){
+    res.render('terms-and-conditions')
+})
 
 
 app.use('/admin',adminRoutes); // Use the admin routes

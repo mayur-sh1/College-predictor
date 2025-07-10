@@ -11,12 +11,6 @@ router.get("/me", auth(['admin', 'superadmin']),adminController.getProfile);
 router.get("/all", auth(['superadmin']),adminController.getAllAdmins);
 router.delete("/delete/:username", auth(['superadmin']),adminController.deleteAdmin);
 
-// Protected test route
-router.get('/protected', auth(['admin', 'superadmin', 'student']), (req, res) => {
-  res.json({
-    message: 'Access granted to protected route!',
-    user: req.user,
-  });
-});
+
 
 module.exports = router;
