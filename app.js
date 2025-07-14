@@ -37,6 +37,9 @@ app.get('/privacy-policy',function(req,res){
 app.get('/terms-and-conditions',function(req,res){
     res.render('terms-and-conditions')
 })
+app.get('/predict',function(req,res){
+    res.render('predict')
+})
 
 
 app.use('/admin',adminRoutes); // Use the admin routes

@@ -11,20 +11,29 @@
   </head>
   <body class="bg-gray-50 text-gray-900">
     <!-- Navbar -->
-    <nav class="bg-white shadow">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <img
-            src="../images/CollegePredictor.png"
-            alt="Logo"
-            class="h-10 w-10 object-contain"
-          />
-          <a href="/" class="text-2xl md:text-3xl font-bold text-blue-600">
-            RankToCollege
-          </a>
-        </div>
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="../images/CollegePredictor.png" alt="Logo" class="h-12 w-12 object-contain" />
+        <a href="/" class="text-4xl font-bold text-blue-600">RankToCollege</a>
       </div>
-    </nav>
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/" class="hover:text-blue-600">Home</a>
+        <a href="/predict" class="text-gray-800 px-4 py-2 rounded transition-transform transform hover:scale-110 hover:shadow-md hover:shadow-blue-500/40 hover:text-blue-700 duration-300">Predict</a>
+        <a href="/about" class="hover:text-blue-600">About</a>
+        <a href="/contact" class="hover:text-blue-600">Contact</a>
+      </div>
+      <div class="hidden md:flex space-x-3">
+        <a href="/login" class="text-blue-600 font-medium  mt-2 hover:underline">Sign In</a>
+        <a href="/register" class="bg-blue-600 text-white px-2 py-2 rounded-lg hover:bg-blue-700">Sign Up</a>
+      </div>
+      <button class="md:hidden" id="nav-toggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
 
     <!-- Terms and Conditions Content -->
     <div class="px-6 md:mx-24 pt-12">
@@ -44,17 +53,17 @@
         <li>All disputes are subject to the laws of India.</li>
         <li>We are not liable for transaction failures due to cardholder authorization limits.</li>
       </ul>
-
+<!-- 
       <h2 class="text-2xl font-semibold text-blue-700 mt-8">Cancellation & Refund Policy</h2>
       <p class="text-base text-gray-700 mt-2">
         No cancellations or refunds are entertained once a transaction is completed.
-      </p>
+      </p> -->
 
-      <h2 class="text-2xl font-semibold text-blue-700 mt-8">Shipping & Delivery Policy</h2>
+      <!-- <h2 class="text-2xl font-semibold text-blue-700 mt-8">Shipping & Delivery Policy</h2>
       <p class="text-base text-gray-700 mt-2">
         Shipping is not applicable for our services as all offerings are digital.
-      </p>
-    </div>
+      </p>-->
+    </div> 
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 mt-12">

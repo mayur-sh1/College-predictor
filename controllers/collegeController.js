@@ -38,14 +38,14 @@ exports.createCollege = async (req, res) => {
 };
 
 // Get all colleges
-exports.readAllColleges = async (req, res) => {
-  try {
-    const colleges = await College.find().populate('counsellingId', 'name exam year');
-    res.json({ message: 'Colleges retrieved successfully', colleges });
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to retrieve colleges', details: err.message });
-  }
-};
+// exports.readAllColleges = async (req, res) => {
+//   try {
+//     const colleges = await College.find().populate('counsellingId', 'name exam year');
+//     res.json({ message: 'Colleges retrieved successfully', colleges });
+//   } catch (err) {
+//     res.status(500).json({ error: 'Failed to retrieve colleges', details: err.message });
+//   }
+// };
 
 // Get college by ID
 exports.readCollegeById = async (req, res) => {
@@ -68,16 +68,17 @@ exports.readCollegeById = async (req, res) => {
 // Get college by name (case-insensitive)
 exports.readCollegeByName = async (req, res) => {
   const { name } = req.params;
-
+  
   try {
-    const college = await College.findOne({ name: { $regex: new RegExp(`^${name}$`, 'i') } })
+    const colleges = await College.find({ name: { $regex: new RegExp(`^${name}$`, 'i') } })
       .populate('counsellingId', 'name exam');
 
-    if (!college) {
+      res.render('readColleges', { colleges });
+    if (!colleges) {
       return res.status(404).json({ message: 'College not found with given name' });
     }
 
-    res.json({ message: 'College retrieved successfully', college });
+    // res.json({ message: 'College retrieved successfully', colleges });
   } catch (err) {
     res.status(500).json({ error: 'Failed to retrieve college', details: err.message });
   }

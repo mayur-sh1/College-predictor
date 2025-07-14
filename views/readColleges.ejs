@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>College Search Results</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="../images/CollegePredictor.png" alt="Logo" class="h-12 w-12 object-contain" />
+        <a href="/" class="text-4xl font-bold text-blue-600">RankToCollege</a>
+      </div>
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/" class="hover:text-blue-600">Home</a>
+        <a href="/predict" class="text-gray-800 px-4 py-2 rounded transition-transform transform hover:scale-110 hover:shadow-md hover:shadow-blue-500/40 hover:text-blue-700 duration-300">Predict</a>
+        <a href="/about" class="hover:text-blue-600">About</a>
+        <a href="/contact" class="hover:text-blue-600">Contact</a>
+      </div>
+      <div class="hidden md:flex space-x-3">
+        <a href="/students/login" class="text-blue-600 font-medium  mt-2 hover:underline">Sign In</a>
+        <a href="/students/register" class="bg-blue-600 text-white px-2 py-2 rounded-lg hover:bg-blue-700">Sign Up</a>
+      </div>
+      <button class="md:hidden" id="nav-toggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="max-w-7xl mx-auto mt-10 p-4">
+    <h1 class="text-2xl font-bold text-blue-700 mb-6">College Search Results</h1>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- College Card 1 -->
+      <div class="bg-white shadow rounded-lg p-4">
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80" alt="IIT Delhi" class="w-full h-48 object-cover rounded mb-4" />
+        <h2 class="text-lg font-semibold text-blue-800">IIT Delhi</h2>
+        <p class="text-gray-600">New Delhi, India</p>
+      </div>
+
+      <!-- College Card 2 -->
+      <div class="bg-white shadow rounded-lg p-4">
+        <img src="https://images.unsplash.com/photo-1581091870622-2eeaad8c03d4?w=600&q=80" alt="NIT Trichy" class="w-full h-48 object-cover rounded mb-4" />
+        <h2 class="text-lg font-semibold text-blue-800">NIT Trichy</h2>
+        <p class="text-gray-600">Tiruchirappalli, Tamil Nadu</p>
+      </div>
+
+      <!-- College Card 3 -->
+      <div class="bg-white shadow rounded-lg p-4">
+        <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=600&q=80" alt="BITS Pilani" class="w-full h-48 object-cover rounded mb-4" />
+        <h2 class="text-lg font-semibold text-blue-800">BITS Pilani</h2>
+        <p class="text-gray-600">Pilani, Rajasthan</p>
+      </div>
+
+      <!-- College Card 4 -->
+      <div class="bg-white shadow rounded-lg p-4">
+        <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848e?w=600&q=80" alt="IIIT Hyderabad" class="w-full h-48 object-cover rounded mb-4" />
+        <h2 class="text-lg font-semibold text-blue-800">IIIT Hyderabad</h2>
+        <p class="text-gray-600">Hyderabad, Telangana</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
